@@ -1,6 +1,6 @@
-import  Movie from '../../model/MoviesModel/Movies';
+import  { Movies } from '../../model/MoviesModel/Movie';
 import IState from './IState';
 
 export default interface AppState extends IState {
-  transactions: Movie;
+  movies: Movies;
 }

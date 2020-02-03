@@ -10,7 +10,7 @@ export default class AppAction {
   public static readonly SHOW_MOVIE_DETAIL: string =
     'AppAction.SHOW_MOVIE_DETAIL';
 
-  public static getTransactions = (): IAction<String, void> => {
+  public static getMovies = (): IAction<String, void> => {
     return {
       type: AppAction.GET_MOVIES,
     };

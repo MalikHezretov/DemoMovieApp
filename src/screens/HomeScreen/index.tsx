@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
+import React, { Component } from 'react';
+import { SafeAreaView, View } from 'react-native';
 import {connect} from 'react-redux';
 import AppAction from '../../redux/action/AppAction';
 import AppState from '../../redux/state/AppState';
+import { FlatList } from 'react-native-gesture-handler';
+import MovieItem from '../../components/MovieItem';
 
 interface AppProps {
   appData: AppState;
@@ -22,9 +24,16 @@ class App extends Component<AppProps> {
   }
 
   render() {
-    console.log('appData', this.props.appData);
+    const { appData } = this.props;
     return (
       <SafeAreaView>
+      <FlatList
+        keyExtractor={(item: any) => item.id.toString()}
+        data={appData.movies}
+        renderItem={({item}) => (
+          <MovieItem movie={item} onPress={() => {}} />
+        )}
+      />
       </SafeAreaView>
     );
   }
@@ -38,7 +47,7 @@ function mapStateToProps(state: any) {
 
 function mapDispatchToProps(dispatch: any) {
   return {
-    getList: () => dispatch(AppAction.getTransactions()),
+    getList: () => dispatch(AppAction.getMovies()),
   };
 }
 

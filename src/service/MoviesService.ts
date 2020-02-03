@@ -1,5 +1,5 @@
 import CommonService from './CommonService';
-import Movie from '../model/MoviesModel/Movies';
+import Movie from '../model/MoviesModel/Movie';
 import {apiHost} from '../utils'
 
 class MoviesService extends CommonService<Movie> {

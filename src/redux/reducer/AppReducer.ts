@@ -2,7 +2,7 @@ import AppState from '../state/AppState';
 import { iDataState } from '../state/IState';
 import IAction from '../action/IAction';
 import AppAction from '../action/AppAction';
-import  Movie  from '../../model/MoviesModel/Movies';
+import  Movie  from '../../model/MoviesModel/Movie';
 import UtilAction from '../action/UtilAction';
 
 export default class AppReducer {
