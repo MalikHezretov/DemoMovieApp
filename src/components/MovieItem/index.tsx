@@ -20,7 +20,6 @@ export default function MovieItem({
   movie,
   onPress,
 }: MovieItemProps) {
-
   return (
     <ContinaerStyle>
       <ImageContainer source={{ uri: movie.homepage }} />
