@@ -7,7 +7,6 @@ import IAction from '../action/IAction';
 function* getList(action: IAction<string, any>) {
   try {
     const data = yield moviesService.getAll();
-    console.log('SAGA_DATA', data);
     yield put({type: AppAction.LOAD_MOVIES, data: data});
   } catch (e) {
     yield put({type: UtilAction.ERROR, error: 'Cannot load transactions'});

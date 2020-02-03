@@ -7,7 +7,7 @@ import UtilAction from '../action/UtilAction';
 
 export default class AppReducer {
   private static readonly _initialState: AppState = {
-    transactions: [],
+    movies: [],
     state: iDataState.initial,
     errorMessage: '',
   };
@@ -27,7 +27,7 @@ export default class AppReducer {
       case AppAction.LOAD_MOVIES:
         return {
           ...state,
-          transactions: action.data !== null ? action.data! : [],
+          movies: action.data !== null ? action.data! : [],
           state: iDataState.loaded,
           errorMessage: '',
         };

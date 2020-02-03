@@ -2,7 +2,7 @@
  * @format
  */
 import React from 'react';
-import App from './App';
+import HomeScreen from './src/screens/HomeScreen';
 import {Provider} from 'react-redux';
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
@@ -23,7 +23,7 @@ const store = configureStore();
 
 const ReduxApp = () => (
   <Provider store={store}>
-    <App />
+    <HomeScreen />
   </Provider>
 );
 
