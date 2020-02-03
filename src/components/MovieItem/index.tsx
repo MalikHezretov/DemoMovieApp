@@ -2,7 +2,7 @@
 import React from 'react';
 import Movie from '../../model/MoviesModel/Movie';
 import {
-  TransactionStyle,
+  ContinaerStyle,
   ImageContainer,
   ContentStyle,
   TitleStyle,
@@ -16,13 +16,13 @@ interface MovieItemProps {
   onPress: () => void;
 }
 
-export default function TransactionItem({
+export default function MovieItem({
   movie,
   onPress,
 }: MovieItemProps) {
 
   return (
-    <TransactionStyle>
+    <ContinaerStyle>
       <ImageContainer source={{ uri: movie.homepage }} />
       <ContentStyle>
         <TitleStyle>{movie.title}</TitleStyle>
@@ -31,6 +31,6 @@ export default function TransactionItem({
           <Price>{movie.popularity} S$</Price>
         </Footer>
       </ContentStyle>
-    </TransactionStyle>
+    </ContinaerStyle>
   );
 }

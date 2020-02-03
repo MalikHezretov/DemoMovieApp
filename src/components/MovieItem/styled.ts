@@ -4,7 +4,7 @@ export const ListContainer = styled.View`
   background-color: #eee;
 `;
 
-export const TransactionStyle = styled.TouchableOpacity`
+export const ContinaerStyle = styled.TouchableOpacity`
   margin-horizontal: 16px;
   margin-top: 16px;
 `;
