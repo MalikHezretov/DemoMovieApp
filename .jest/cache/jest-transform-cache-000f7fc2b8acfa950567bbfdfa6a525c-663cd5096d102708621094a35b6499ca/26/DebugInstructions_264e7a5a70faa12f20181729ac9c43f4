@@ -1,0 +1,38 @@
+7181d852537bf3bbb817d8931e4bf671
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+var styles = _reactNative.StyleSheet.create({
+  highlight: {
+    fontWeight: '700'
+  }
+});
+
+var DebugInstructions = _reactNative.Platform.select({
+  ios: function ios() {
+    return _react.default.createElement(_reactNative.Text, null, "Press ", _react.default.createElement(_reactNative.Text, {
+      style: styles.highlight
+    }, "Cmd + D"), " in the simulator or", ' ', _react.default.createElement(_reactNative.Text, {
+      style: styles.highlight
+    }, "Shake"), " your device to open the React Native debug menu.");
+  },
+  default: function _default() {
+    return _react.default.createElement(_reactNative.Text, null, "Press ", _react.default.createElement(_reactNative.Text, {
+      style: styles.highlight
+    }, "Cmd or Ctrl + M"), " or", ' ', _react.default.createElement(_reactNative.Text, {
+      style: styles.highlight
+    }, "Shake"), " your device to open the React Native debug menu.");
+  }
+});
+
+var _default2 = DebugInstructions;
+exports.default = _default2;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkRlYnVnSW5zdHJ1Y3Rpb25zLmpzIl0sIm5hbWVzIjpbInN0eWxlcyIsIlN0eWxlU2hlZXQiLCJjcmVhdGUiLCJoaWdobGlnaHQiLCJmb250V2VpZ2h0IiwiRGVidWdJbnN0cnVjdGlvbnMiLCJQbGF0Zm9ybSIsInNlbGVjdCIsImlvcyIsImRlZmF1bHQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFXQTs7QUFDQTs7QUFFQSxJQUFNQSxNQUFNLEdBQUdDLHdCQUFXQyxNQUFYLENBQWtCO0FBQy9CQyxFQUFBQSxTQUFTLEVBQUU7QUFDVEMsSUFBQUEsVUFBVSxFQUFFO0FBREg7QUFEb0IsQ0FBbEIsQ0FBZjs7QUFNQSxJQUFNQyxpQkFBNkIsR0FBR0Msc0JBQVNDLE1BQVQsQ0FBZ0I7QUFDcERDLEVBQUFBLEdBQUcsRUFBRTtBQUFBLFdBQ0gsNkJBQUMsaUJBQUQsa0JBQ1EsNkJBQUMsaUJBQUQ7QUFBTSxNQUFBLEtBQUssRUFBRVIsTUFBTSxDQUFDRztBQUFwQixpQkFEUiwwQkFDMEUsR0FEMUUsRUFFRSw2QkFBQyxpQkFBRDtBQUFNLE1BQUEsS0FBSyxFQUFFSCxNQUFNLENBQUNHO0FBQXBCLGVBRkYsc0RBREc7QUFBQSxHQUQrQztBQVFwRE0sRUFBQUEsT0FBTyxFQUFFO0FBQUEsV0FDUCw2QkFBQyxpQkFBRCxrQkFDUSw2QkFBQyxpQkFBRDtBQUFNLE1BQUEsS0FBSyxFQUFFVCxNQUFNLENBQUNHO0FBQXBCLHlCQURSLFNBQ2lFLEdBRGpFLEVBRUUsNkJBQUMsaUJBQUQ7QUFBTSxNQUFBLEtBQUssRUFBRUgsTUFBTSxDQUFDRztBQUFwQixlQUZGLHNEQURPO0FBQUE7QUFSMkMsQ0FBaEIsQ0FBdEM7O2dCQWlCZUUsaUIiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIENvcHlyaWdodCAoYykgRmFjZWJvb2ssIEluYy4gYW5kIGl0cyBhZmZpbGlhdGVzLlxuICpcbiAqIFRoaXMgc291cmNlIGNvZGUgaXMgbGljZW5zZWQgdW5kZXIgdGhlIE1JVCBsaWNlbnNlIGZvdW5kIGluIHRoZVxuICogTElDRU5TRSBmaWxlIGluIHRoZSByb290IGRpcmVjdG9yeSBvZiB0aGlzIHNvdXJjZSB0cmVlLlxuICpcbiAqIEBmbG93XG4gKiBAZm9ybWF0XG4gKi9cblxuaW1wb3J0IHR5cGUge05vZGV9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7UGxhdGZvcm0sIFN0eWxlU2hlZXQsIFRleHR9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5jb25zdCBzdHlsZXMgPSBTdHlsZVNoZWV0LmNyZWF0ZSh7XG4gIGhpZ2hsaWdodDoge1xuICAgIGZvbnRXZWlnaHQ6ICc3MDAnLFxuICB9LFxufSk7XG5cbmNvbnN0IERlYnVnSW5zdHJ1Y3Rpb25zOiAoKSA9PiBOb2RlID0gUGxhdGZvcm0uc2VsZWN0KHtcbiAgaW9zOiAoKSA9PiAoXG4gICAgPFRleHQ+XG4gICAgICBQcmVzcyA8VGV4dCBzdHlsZT17c3R5bGVzLmhpZ2hsaWdodH0+Q21kICsgRDwvVGV4dD4gaW4gdGhlIHNpbXVsYXRvciBvcnsnICd9XG4gICAgICA8VGV4dCBzdHlsZT17c3R5bGVzLmhpZ2hsaWdodH0+U2hha2U8L1RleHQ+IHlvdXIgZGV2aWNlIHRvIG9wZW4gdGhlIFJlYWN0XG4gICAgICBOYXRpdmUgZGVidWcgbWVudS5cbiAgICA8L1RleHQ+XG4gICksXG4gIGRlZmF1bHQ6ICgpID0+IChcbiAgICA8VGV4dD5cbiAgICAgIFByZXNzIDxUZXh0IHN0eWxlPXtzdHlsZXMuaGlnaGxpZ2h0fT5DbWQgb3IgQ3RybCArIE08L1RleHQ+IG9yeycgJ31cbiAgICAgIDxUZXh0IHN0eWxlPXtzdHlsZXMuaGlnaGxpZ2h0fT5TaGFrZTwvVGV4dD4geW91ciBkZXZpY2UgdG8gb3BlbiB0aGUgUmVhY3RcbiAgICAgIE5hdGl2ZSBkZWJ1ZyBtZW51LlxuICAgIDwvVGV4dD5cbiAgKSxcbn0pO1xuXG5leHBvcnQgZGVmYXVsdCBEZWJ1Z0luc3RydWN0aW9ucztcbiJdfQ==

@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView,  } from 'react-native';
 import {connect} from 'react-redux';
 import AppAction from '../../redux/action/AppAction';
 import AppState from '../../redux/state/AppState';
-import { FlatList } from 'react-native-gesture-handler';
-import MovieItem from '../../components/MovieItem';
+import {
+  ContinaerStyle,
+  ImageContainer,
+  ContentStyle,
+  TitleStyle,
+  Footer,
+  Cause,
+  Price,
+} from './styled';
 
 interface AppProps {
   appData: AppState;
   getList: () => any;
 }
 
-class App extends Component<AppProps> {
+class HomeScreen extends Component<AppProps> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -24,16 +31,20 @@ class App extends Component<AppProps> {
   }
 
   render() {
-    const { appData } = this.props;
+    const { movies } = this.props.appData;
+    
     return (
       <SafeAreaView>
-      <FlatList
-        keyExtractor={(item: any) => item.id.toString()}
-        data={appData.movies}
-        renderItem={({item}) => (
-          <MovieItem movie={item} onPress={() => {}} />
-        )}
-      />
+        <ContinaerStyle>
+          <ImageContainer source={{ uri: movies.homepage }} />
+          <ContentStyle>
+            <TitleStyle>{movies.title}</TitleStyle>
+            <Footer>
+              {movies.adult && <Cause>REFUNDED</Cause>}
+              <Price>{movies.popularity} S$</Price>
+            </Footer>
+          </ContentStyle>
+        </ContinaerStyle>
       </SafeAreaView>
     );
   }
@@ -51,4 +62,4 @@ function mapDispatchToProps(dispatch: any) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);   
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);   
