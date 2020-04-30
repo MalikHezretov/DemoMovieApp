@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie item Movie item should render correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginHorizontal": 16,
+      "marginTop": 16,
+      "opacity": 1,
+    }
+  }
+  testID="cardItem"
+>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ccc",
+          "borderRadius": 6,
+          "height": 150,
+          "width": 90,
+        },
+      ]
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#fff",
+          "fontSize": 16,
+          "marginLeft": 5,
+          "marginTop": 10,
+        },
+      ]
+    }
+  />
+</View>
+`;

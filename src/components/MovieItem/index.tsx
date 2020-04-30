@@ -1,35 +1,32 @@
-  
 import React from 'react';
-import Movie from '../../model/MoviesModel/Movie';
+import { Movie } from '../../model/MoviesModel/Movie';
 import {
-  ContinaerStyle,
+  TransactionStyle,
   ImageContainer,
-  ContentStyle,
   TitleStyle,
-  Footer,
-  Cause,
-  Price,
 } from './styled';
 
-interface MovieItemProps {
+interface MoviItemProps {
   movie: Movie;
-  onPress: () => void;
+  nav: () => void,
 }
 
-export default function MovieItem({
-  movie,
-  onPress,
-}: MovieItemProps) {
-  return (
-    <ContinaerStyle>
-      <ImageContainer source={{ uri: movie.homepage }} />
-      <ContentStyle>
-        <TitleStyle>{movie.title}</TitleStyle>
-        <Footer>
-          {movie.adult && <Cause>REFUNDED</Cause>}
-          <Price>{movie.popularity} S$</Price>
-        </Footer>
-      </ContentStyle>
-    </ContinaerStyle>
-  );
+export default function MoviItem({
+    movie,
+    nav
+}: MoviItemProps) {
+
+
+  const showItem = () => {
+    if(movie){
+      return (
+        <TransactionStyle testID="cardItem" onPress={() => nav('DetailScreen', { itemId: movie.imdbID})}>
+          <ImageContainer  source={{ uri: movie.Poster }} />
+          <TitleStyle>{movie.Title}</TitleStyle>
+        </TransactionStyle>
+      );
+    }
+  }
+
+  return showItem();
 }

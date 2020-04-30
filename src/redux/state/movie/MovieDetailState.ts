@@ -1,6 +1,6 @@
-import Movie from '../../../model/MoviesModel/Movie';
+import { Detail } from '../../../model/DetailModel';
 import IState from '../IState';
 
 export default interface MovieDetailState extends IState {
-  movie?: Movie;
+  detail?: Detail;
 }

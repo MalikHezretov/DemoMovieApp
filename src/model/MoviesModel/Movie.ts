@@ -1,41 +1,15 @@
-import CommonModel from '../CommonModel';
 
-export declare type Movies = Movie[];
 
-export declare type UTMovie = Movie | undefined;
-
-export default interface Movie extends CommonModel {
-  adult: boolean;
-  backdrop_path: string;
-  belongs_to_collection: string;
-  budget: number;
-  genres: [
-    {id: number, name: string}
-  ];
-  homepage: string;
-  id: number;
-  imdb_id: string;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  production_companies: [
-    {id: number, logo_path: string, name: string, origin_country: string}
-  ];
-  production_countries: [
-    {iso_3166_1: string, name: string}
-  ];
-  release_date: string;
-  revenue: number;
-  runtime: number;
-  spoken_languages: [
-    {iso_639_1: string, name: string}
-  ];
-  status: string;
-  tagline: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
+export interface Movie {
+        Title: string;
+        Year: string;
+        imdbID: string;
+        Type: string;
+        Poster: string;
 }
+
+export interface MovieList {
+    Search: Array<Movie>;
+    totalResults: number;
+    Response: string;
+};

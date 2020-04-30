@@ -1,65 +1,57 @@
-import React, { Component } from 'react';
-import { SafeAreaView,  } from 'react-native';
-import {connect} from 'react-redux';
+import React, { useEffect } from 'react';
+import {ScrollView, SafeAreaView, ActivityIndicator} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
 import AppAction from '../../redux/action/AppAction';
-import AppState from '../../redux/state/AppState';
-import {
-  ContinaerStyle,
-  ImageContainer,
-  ContentStyle,
-  TitleStyle,
-  Footer,
-  Cause,
-  Price,
-} from './styled';
+import MovieCards from '../../components/MovieCards';
+import {Title} from './styled';
+import { SearchBar } from 'react-native-elements';
+import SplashScreen from 'react-native-splash-screen';
 
-interface AppProps {
-  appData: AppState;
-  getList: () => any;
-}
+const HomeScreen = ({navigation}: any) => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
 
-class HomeScreen extends Component<AppProps> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      refunded: false,
-    };
-  }
+  const movieData = useSelector(state => state);
+  const dispatch = useDispatch();
 
-  componentDidMount() {
-    this.props.getList();
-  }
+  useEffect(() => {
+    dispatch(AppAction.getMovies('Star','movie'));
+  }, []);
 
-  render() {
-    const { movies } = this.props.appData;
-    
-    return (
-      <SafeAreaView>
-        <ContinaerStyle>
-          <ImageContainer source={{ uri: movies.homepage }} />
-          <ContentStyle>
-            <TitleStyle>{movies.title}</TitleStyle>
-            <Footer>
-              {movies.adult && <Cause>REFUNDED</Cause>}
-              <Price>{movies.popularity} S$</Price>
-            </Footer>
-          </ContentStyle>
-        </ContinaerStyle>
-      </SafeAreaView>
-    );
-  }
-}
+  // useEffect(() => {
+  //   dispatch(AppAction.getMovies('Star','series'));
+  // }, []);
 
-function mapStateToProps(state: any) {
-  return {
-    appData: state.appData,
-  };
-}
+  // useEffect(() => {
+  //   dispatch(AppAction.getMovies('Star','episode'));
+  // }, []);
 
-function mapDispatchToProps(dispatch: any) {
-  return {
-    getList: () => dispatch(AppAction.getMovies()),
-  };
-}
+  const showMovieList = () => {
+    console.log('state', movieData.appData.movies);
+        const { navigate } = navigation;
+        if(movieData){
+            const { Search } = movieData.appData.movies;
+            return (
+                <ScrollView>
+                    <Title>Movies on Theatre</Title>
+                    <MovieCards nav={navigate} movieList={Search} />
+                    <Title>Coming Soon</Title>
+                    <MovieCards nav={navigate} movieList={Search} />
+                    <MovieCards nav={navigate}  movieList={Search} />
+                </ScrollView>
+            )
+        }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);   
+        return <ActivityIndicator color='#fff' style={{alignSelf: 'center'}} size="large" />
+    }
+
+  return (
+    <SafeAreaView style={{flex: 1, backgroundColor: '#1d1e28'}}>
+      <SearchBar placeholder='Type Here...' />
+      {showMovieList()}
+    </SafeAreaView>
+  );
+};
+
+export default HomeScreen;

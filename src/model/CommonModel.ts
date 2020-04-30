@@ -1,1 +1,1 @@
-export default interface CommonModel {}
+export default interface CommonModel {};

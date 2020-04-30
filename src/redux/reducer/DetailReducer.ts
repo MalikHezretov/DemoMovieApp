@@ -1,48 +1,41 @@
-import AppState from '../state/AppState';
+import MovieDetailState from '../state/movie/MovieDetailState';
 import { iDataState } from '../state/IState';
 import IAction from '../action/IAction';
-import AppAction from '../action/AppAction';
-import  { Movie }  from '../../model/MoviesModel/Movie';
+import DetailAction from '../action/DetailAction';
+import  { Detail }  from '../../model/DetailModel';
 import UtilAction from '../action/UtilAction';
 
-export default class AppReducer {
-  private static readonly _initialState: AppState = {
-    movies: [],
+export default class DetailReducer {
+  private static readonly _initialState: MovieDetailState = {
+    detail: undefined,
     state: iDataState.initial,
     errorMessage: '',
   };
 
   public static reducer(
-    state: AppState = AppReducer._initialState,
-    action: IAction<any, Movie>,
-  ): AppState {
+    state: MovieDetailState = DetailReducer._initialState,
+    action: IAction<any, Detail>,
+  ): MovieDetailState {
     switch (action.type) {
-      case AppAction.GET_MOVIES:
+      case DetailAction.GET_DETAIL:
         return {
           ...state,
           state: iDataState.loading,
           errorMessage: '',
         };
 
-      case AppAction.LOAD_MOVIES:
+      case DetailAction.LOAD_DETAIL:
         return {
           ...state,
-          movies: action.data !== null ? action.data! : [],
+          detail: action.data,
           state: iDataState.loaded,
           errorMessage: '',
         };
 
-      case AppAction.SHOW_MOVIE_LIST:
+      case DetailAction.SHOW_DETAIL:
         return {
           ...state,
           state: iDataState.loaded,
-        };
-
-      case AppAction.SHOW_MOVIE_DETAIL:
-        return {
-          ...state,
-          state: iDataState.loading,
-          errorMessage: '',
         };
 
       case UtilAction.ERROR:
